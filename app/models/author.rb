@@ -1,2 +1,6 @@
+  
 class Author < ActiveRecord::Base
-end
+    validates :name, presence: true
+    validates :email, uniqueness: true
+    validates :phone_number, numericality: { only_integer: true }, length: { is: 10 }
+  end
